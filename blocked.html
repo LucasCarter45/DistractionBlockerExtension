@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocked by Distraction Blocker</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #111; }
+      .wrap { max-width: 720px; margin: 12vh auto; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 28px; }
+      h1 { margin: 0 0 8px; font-size: 22px; }
+      p { margin: 8px 0; color: #444; }
+      .btns { margin-top: 16px; display: flex; gap: 10px; }
+      button { padding: 8px 12px; border: 1px solid #ccc; background: #fafafa; border-radius: 6px; cursor: pointer; }
+      button.primary { background: #111; color: #fff; border-color: #111; }
+      code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+      .list { margin-top: 18px; }
+      .list h2 { font-size: 16px; margin: 0 0 8px; }
+      ul { list-style: none; padding: 0; margin: 8px 0 0; max-height: 360px; overflow: auto; }
+      li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid #eee; }
+      .filter { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #333; }
+      .muted { color: #888; }
+      .empty { color: #777; font-size: 13px; margin-top: 6px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Blocked</h1>
+      <p>This page is blocked by <strong>Distraction Blocker</strong>.</p>
+      <p id="info" style="display:none"></p>
+      <div class="btns">
+        <button id="manage" class="primary">Manage blocked list</button>
+      </div>
+
+      <div id="listWrap" class="list" style="display:none;">
+        <h2>Blocked list</h2>
+        <ul id="list"></ul>
+        <div id="empty" class="empty">No blocked links yet.</div>
+      </div>
+    </div>
+    <script src="blocked.js"></script>
+  </body>
+  </html>

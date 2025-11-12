@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Distraction Blocker",
+  "description": "Block sites and specific links you choose.",
+  "version": "0.1.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "tabs",
+    "contextMenus"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Distraction Blocker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
